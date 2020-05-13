@@ -1,11 +1,11 @@
-{"name": "qa-react",
+{
+  "name": "qa-react",
   "version": "1.0.0",
   "engines": {
     "node": "12.14.1"
   },
   "private": true,
-  "scripts":
-  {
+  "scripts": {
     "start": "cd server && node app.js",
     "dev": "cd client && npm start",
     "test": "cd client && npm test",
