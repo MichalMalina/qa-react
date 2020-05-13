@@ -10,7 +10,7 @@ const path = require('path');
 const port = process.env.PORT || 8080;
 const app = express();
 
-app.use(express.static('../client01/build'));
+app.use(express.static('../client/build'));
 app.use(bodyParser.json());
 app.use(morgan('combined'));
 app.use(cors());
