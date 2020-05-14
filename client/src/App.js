@@ -22,14 +22,14 @@ class App extends Component {
   }
 
  async getData() {
-    const url = "${this.API_URL}/questions/";
+    const url = `${this.API_URL}/questions/`;
       const response = await fetch(url);
       const data = await response.json();
       return this.setState({ questions:data} )
   }
 
   async postData() {
-      const url = "${this.API_URL}/questions/";
+      const url = `${this.API_URL}/questions/`;
       const response = await fetch(url);
       const data = await response.json();
   }
@@ -40,7 +40,7 @@ class App extends Component {
            headers: {'Content-Type': 'application/json'},
            body: JSON.stringify({ques: ques , answ:[]})
        };
-       const response = await fetch('${this.API_URL}/questions/', request);
+       const response = await fetch(`${this.API_URL}/questions/`, request);
        const data = await response.json();
        this.getData();
        console.log(data);
