@@ -52,7 +52,7 @@ class App extends Component {
         const response = await fetch(url, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({text: text, vote : 2})
+            body: JSON.stringify({text: text, vote : 0})
         });
         const data = await response.json();
         this.getData();
