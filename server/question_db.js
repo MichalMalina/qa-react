@@ -46,9 +46,21 @@ class Db {
         return await question.save();
     }
 
-    async editVote (questionId , vote) {
-        const question = await this.getQuestion(questionId);
+    async addVote (voteId , vote) {
+        const answer = await this.getAnswer(voteId);
+        question.answ.vote.push(vote);
+        return await answer.save();
     }
+
+    async getAnswer(id) {
+        try {
+            return await this.questionModel.answ.findById(id);
+        } catch (error) {
+            console.error("getVote:", error.message);
+            return {};
+        }
+    }
+
 
     /**
      Function to create question if needed

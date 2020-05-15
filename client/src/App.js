@@ -60,14 +60,13 @@ class App extends Component {
     }
 
     /*
-    async editVote(id, vote) {
-        console.log("postAnswer", id, vote);
-        const url = `http://localhost:8080/api/questions/${id}`;
-
+    async postVote(id, vote) {
+        console.log("postVote", id, vote);
+        const url = `${this.API_URL}/questions/${id}`;
         const response = await fetch(url, {
-            method: 'POST',
+            method: 'PUT',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({text: text, vote : 2})
+            body: JSON.stringify({vote: vote})
         });
         const data = await response.json();
         this.getData();
